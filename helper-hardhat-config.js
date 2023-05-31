@@ -3,7 +3,7 @@ const { ethers } = require("hardhat")
 const networkConfig = {
     default: {
         name: "hardhat",
-        keepersUpdateInterval: "30",
+        keepersUpdateInterval: "180",
     },
     5: {
         name: "goerli",
@@ -12,15 +12,14 @@ const networkConfig = {
         gasLane: "0x79d3d8832d904592c0bf9818b621522c988bb8b0c05cdc3b15aea1b6e8db0c15",
         subscriptionId: "9259",
         callbackGasLimit: "500000",
-        interval: "30",
+        interval: "2592000",
     },
     31337: {
-        // no vrfcoord because using mock and just copied gas lane from goerli for same reason
         name: "localhost",
         entranceFee: ethers.utils.parseEther("0.01"),
         gasLane: "0x79d3d8832d904592c0bf9818b621522c988bb8b0c05cdc3b15aea1b6e8db0c15",
         callbackGasLimit: "500000",
-        interval: "30",
+        interval: "180", // seconds
     },
 }
 
