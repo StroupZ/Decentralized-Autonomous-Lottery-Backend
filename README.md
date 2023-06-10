@@ -6,6 +6,7 @@ This is the backend/smart contract portion for the Decentralized Autonomous Lott
 ## Tech Stack
 - JavaScript for writing tests and scripts
 - Solidity for writing smart contracts
+- Node.js for testing
 - Ethers.js for testing and deploying smart contracts
 - Hardhat for testing and deploying smart contracts
 - Chainlink Automation for maintenance
