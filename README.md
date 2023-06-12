@@ -22,8 +22,9 @@ This is the backend/smart contract portion for the Decentralized Autonomous Lott
    - `COINMARKETCAP_API_KEY=YOUR_COINMARKETCAP_API_KEY`
    - `ETHERSCAN_API_KEY=YOUR_ETHERSCAN_API_KEY`
    - `UPDATE_FRONT_END=true`
-5. Run `yarn hardhat node` to deploy contracts on localhost.
-6. Run `yarn hardhat deploy --network goerli` to deploy contracts on Goerli Testnet.
+5. Replace the value for subscriptionId in network 5(Goerli) in `helper-hardhat-config` with your own subscription ID for [Chainlink VRF](https://vrf.chain.link/goerli) 
+6. Run `yarn hardhat node` to deploy contracts on localhost.
+7. Run `yarn hardhat deploy --network goerli` to deploy contracts on Goerli Testnet.
 <br><br>
 ## Test
 - Run `yarn hardhat test` to run unit tests on localhost.
