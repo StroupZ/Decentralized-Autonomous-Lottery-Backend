@@ -9,6 +9,7 @@ require("dotenv").config()
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL
 const PRIVATE_KEY = process.env.PRIVATE_KEY
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
+const Sepolia_RPC_URL = process.env.SEPOLIA_RPC_URL
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -29,10 +30,18 @@ module.exports = {
             accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
             saveDeployments: true,
         },
+        sepolia: {
+            chainId: 11155111,
+            blockConfirmations: 6,
+            url: Sepolia_RPC_URL,
+            accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+            saveDeployments: true,
+        },
     },
     etherscan: {
         apiKey: {
             goerli: ETHERSCAN_API_KEY,
+            sepolia: ETHERSCAN_API_KEY,
         },
         customChains: [
             {
@@ -41,6 +50,14 @@ module.exports = {
                 urls: {
                     apiURL: "https://api-goerli.etherscan.io/api",
                     browserURL: "https://goerli.etherscan.io",
+                },
+            },
+            {
+                network: "sepolia",
+                chainId: 11155111,
+                urls: {
+                    apiURL: "https://api-sepolia.etherscan.io/api",
+                    browserURL: "https://sepolia.etherscan.io",
                 },
             },
         ],
